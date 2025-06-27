@@ -1,0 +1,589 @@
+strict digraph G {
+    edge[dir=none]
+    node[shape=rect style=filled]
+    splines=ortho
+
+    subgraph VanillaRegions {
+        node[ penwidth=3 style="filled, diagonals" fontname="Impact" ]
+        SU [label="Outskirts" color="#38C79E" fillcolor="#a1e7d3"]
+        HI [label="Industrial Complex" color="#75CED5" fillcolor="#b2e4e7"]
+        GW [label="Garbage Wastes" color="#8DBD42" fillcolor="#bee67f"]
+        SH [label="Shaded Citadel" color="#515151" fillcolor="#a3a3a3"]
+        SL [label="Shoreline" color="#EDE5CC" fillcolor="#A8B88B"]
+        CC [label="Chimney Canopy" color="#C53D0F" fillcolor="#eb7f5b"]
+        DS [label="Drainage System" color="#E84DFF" fillcolor="#f6b8ff"]
+        LF [label="Farm Arrays" color="#608C9E" fillcolor="#a2c7d6"]
+        SI [label="Sky Islands" color="#FFD0AA" fillcolor="#fff0e4"]
+        UW [label="The Exterior" color="#FFB447" fillcolor="#ffddaa"]
+        SS [label="Five Pebbles" color="#19E53F" fillcolor="#79f890"]
+        SB [label="Subterranean" color="#7D4236" fillcolor="#a17167"]
+        VS [label="Pipeyard" color="#75405C" fillcolor="#9c768a"]
+        MS [label="Submerged" color="#0B9793" fillcolor="#89d1cf"]
+        OE [label="Outer Expanse" color="#D8AE8A" fillcolor="#e6d5c6"]
+        LC [label="Metropolis" color="#7F3339" fillcolor="#b6777c"]
+
+        // Van2VanConnections --------
+        edge[penwidth=3]
+
+
+        //level 0
+            //SS
+            SS -> UW [color="#19E53F"]//;0.5:#FFB447"]
+            //LC
+        LC -> UW [color="#FFB447"]//;0.5:#7F3339"]
+
+        //level 1
+            //SI
+        SI -> CC [color="#FFD0AA"]//;0.5:#C53D0F"]
+        SI -> LF [color="#FFD0AA"]//;0.5:#608C9E"]
+        SI -> VS [color="#FFD0AA"]//;0.5:#75405C"]
+            //UW
+        UW -> CC [color="#FFB447"]//;0.5:#C53D0F"]
+        UW -> SH [color="#FFB447"]//;0.5:#515151"]
+        UW -> SL [color="#FFB447"]//;0.5:#515151"]
+
+        //level 2
+            //CC
+        CC -> HI [color="#C53D0F"]//;0.5:#75CED5"]
+        CC -> DS [color="#C53D0F"]//;0.5:#E84DFF"]
+        
+        //level 3
+            //HI
+        HI -> SH [color="#75CED5"]//;0.5:#515151"]
+        HI -> SU [color="#75CED5"]//;0.5:#38C79E"]
+        HI -> VS [color="#75CED5"]//;0.5:#75405C"]
+        HI -> GW [color="#75CED5"]//;0.5:#8DBD42"]
+
+        //level 4
+            //SH
+        SH -> SL [color="#515151"]//;0.5:#EDE5CC"]
+        SH -> GW [color="#515151"]//;0.5:#8DBD42"]
+            //LF
+        LF -> SU [color="#608C9E"]//;0.5:#38C79E"]
+        LF -> SB [color="#608C9E"]//;0.5:#7D4236"] 
+
+        //level 5
+            //SU
+        SU -> DS [color="#38C79E"]//;0.5:#E84DFF"]
+        SU -> OE [color="#38C79E"]//;0.5:#D8AE8A"]
+            //VS
+        VS -> SL [color="#75405C"]//;0.5:#EDE5CC"]
+        VS -> SB [color="#75405C"]//;0.5:#7D4236"]
+            //GW
+        GW -> DS [color="#8DBD42"]//;0.5:#E84DFF"] // or reverse
+        GW -> SL [color="#8DBD42"]//;0.5:#EDE5CC"]
+
+        //level 6
+            //DS
+        DS -> SB [color="#E84DFF"]//;0.5:#7D4236"]
+            //SL
+        SL -> SB [color="#EDE5CC"]//;0.5:#7D4236"]
+        SL -> MS [color="#EDE5CC"]//;0.5:#0B9793"]
+
+        //level 7
+            //SB
+        SB -> OE [color="#7D4236"]//;0.5:#D8AE8A"]
+
+    }
+
+    subgraph ModdedRegions {
+        ZZ [label="Aerial Arrays (ZZ)" color="#ecb547"]
+        OA [label="Aqueducts (OA)" color="#ffac9a"]
+        KF [label="Archaic Facility\n(KF)" color="#da8760"]
+        AB [label="Arid Barrens (AB)" color="#ffcc7d"]
+        BL [label="Badlands (BL)" color="#dd9f51"]
+        BI [label="Bioengineering\nCenter (BI)" color="#dd415e"]
+        UU [label="Citadel (UU)" color="#818a95"]
+        RF [label="Coral Caves (RF)" color="#00abff"]
+        PQ [label="Corroded Passage (PQ)" color="#7e926a"]
+        CY [label="Crystal Caves (CY)" color="#9272ed"]
+        AK [label="Curious Ascent (AK)" color="#e99e50"]
+        DKM [label="Dark Meadows\n(DKM)" color="#6b4763" fontcolor="#ffffff"]
+        "9J" [label="Dark Pipework (9J)" color="#700000" fontcolor="#ffffff"]
+        KR [label="Deep Pipeline (KR)" color="#0f9d90"]
+        DW [label="Deserted\nWastelands (DW)" color="#ffe65b"]
+        DP [label="Drowned\nPantheon (DP)" color="#5d7024"]
+        W7 [label="Dusty Wireworks (W7)" color="#5d698b"]
+        EV [label="Eventide (EV)" color="#ffb1c6"]
+        NS [label="Forbidden\nTropics (NS)" color="#27d5fb"]
+        FB [label="Forgotten Boiler (FB)" color="#3d1b18" fontcolor="#ffffff"]
+        F1 [label="Forsaken Factory (F1)" color="#649139"]
+        FF [label="Forsaken Ruins (FF)" color="#3d3b48" fontcolor="#ffffff"]
+        GS [label="Gilded Sanctuary (GS)" color="#d4c9b0"]
+        WY [label="Grand Reservoir (WY)" color="#343255" fontcolor="#ffffff"]
+        HH [label="Hallowed Grotto (HH)" color="#2d6933"]
+        HC [label="Howling Rift (HC)" color="#b33e4c"]
+        XD [label="Lost Cranny (XD)" color="#cdfaff"]
+        WM [label="Washroom (WM)" color="#fce473"]
+        LW [label="Lush Mire (LW)" color="#bffd64"]
+        ML [label="Marshland\nWastes (ML)" color="#4f5200" fontcolor="#ffffff"]
+        NM [label="Midnight\nMeadows (NM)" color="#37335f" fontcolor="#ffffff"]
+        HW [label="Moonlit Acres (HW)" color="#946d30"]
+        VQ [label="Outer Outskirts\n(VQ)" color="#319578"]
+        W2 [label="Overgrown Facility\n(W2)" color="#7f9575"]
+        RE [label="Primordial\nShore (RE)" color="#9da179"]
+        BY [label="Purification\nConduits (BY)" color="#c9b66e"]
+        YL [label="Rainforest (YL)" color="#b71f57"]
+        SC [label="Sacred Garden (SC)" color="#57735f"]
+        HA [label="Scarlet Forest (HA)" color="#b71f37"]
+        SPS [label="Scrapped\nPeaks (SPS)" color="#3adab5"]
+        SEC [label="Secluded\nPass (SEC)" color="#aefbff"]
+        UF [label="Sizzling\nSewers (UF)" color="#99db25"]
+        KY [label="Sky Tower (KY)" color="#669745"]
+        SP2 [label="Slag Pits (SP)" color="#25332b" fontcolor="#ffffff"]
+        SK2 [label="Slug King (SK)" color="#c99292"]
+        SK [label="Stormy Coast (SK)" color="#295c75"]
+        NR [label="Sun-Scorched\nForest (NR)" color="#d9a073"]
+        SP [label="Sunlit Power\nPlant (SP)" color="#f7ac83"]
+        TO2 [label="Tainted Overpass (TO)" color="#34483f"]
+        MT [label="The Grinder (MT)" color="#752121"]
+        TO [label="The Outline (TO)" color="#6c9682"]
+        RA [label="The Radiosphere (RA)" color="#556b4d"]
+        JH [label="The Steamyards (JH)" color="#b9a6ac"]
+        TT [label="The Tower (TT)" color="#bba392"]
+        QW [label="Timeless\nConservatory (QW)" color="#4e5d2d" fontcolor="#ffffff"]
+        UB [label="Underbelly (UB)" color="#4700e5" fontcolor="#ffffff"]
+        US [label="Undersea (US)" color="#1c95c9"]
+        CR [label="Ventilation\nDucts (CR)" color="#41413f" fontcolor="#ffffff"]
+        WP [label="Weakened\nPlatform (WP)" color="#c96d51"]
+        F3 [label="The Foundry (F3)" color="#ed8b44"]
+        FI [label="Floating\nIsles (FI)" color="#a4a5ba"]
+        SW1 [label="Seven Winding\nTunnles (SW)" color="#7f7ee6"]
+        IP [label="Auxiliary Intake (IP)" color="#68a39b"]
+        M5 [label="Decaying Waste (M5)" color="#872f2f"]
+        M1 [label="Mossy Rifts (M1)" color="#ffddf9"]
+        RG [label="Consecrated\nSteppe (RG)" color="#ff6215"]
+        MD [label="Data Manifold (MD)" color="#73655f"]
+        QL [label="Ashen Bow (QL)" color="#6c9089"]
+        WF [label="Western\nForest (WF)" color="#d89a8f"]
+        OWO [label="Horrible Evil\nTunnel (OWO)" color="#444444" fontcolor="#ffffff"]
+        LI [label="Cliffside (LI)" color="#2b0d0d" fontcolor="#ffffff"]
+        M2 [label="The Labyrinth\n(M2)" color="#433346" fontcolor="#ffffff"] 
+        AGC [label="Anti-Gravity\nCaves (AGC)" color="#0604d3" fontcolor="#ffffff"] 
+        HR [label="Hall of Fame (HR)" color="#f3604c"]
+        G5 [label="Unofficial Leditor\nMonth Gallery (G5)" color="#9ebcc5"]
+        BW [label="The Barren\nWastes (BW)" color="#ef9f6e"]
+
+        //lost pipeways
+        J1 [label="Tower (J1)" color="#adadad"]
+        J2 [label="The Ducts (J2)" color="#adadad"]
+
+        //Polehop
+        node[style="filled" color="#443b3e" fontcolor="#ffffff"]
+        PH [label="Pole Hop (PH)"]
+        PR [label="Abandoned Refinery (PR)"]
+        SQ [label="Pole++ (SQ)"]
+
+        //Global Hyper-Transit System / 4B
+        node[color="#6859ab" fontcolor=black]
+        Q0 [label="Hyper-Transit\nSystem (Q0)"]
+        IQ [label="EIE (IQ)"]
+        NSH [label="NSH (NSH)"]//6a9d5c
+        II [label="Unparalleled\nInnocence (II)"]
+        node[color="#303C7D"]
+        "4B" [label="Probationary\nDistrict 4B" fontcolor="#ffffff"]
+        RW [label="Side World (RW)" fontcolor="#ffffff"]
+
+        //Gardens
+        node[color="#A3FFA4"]
+        GH [label="Hanging Gardens (GH)"]
+        PV [label="Preservatory (PV)"]
+        
+        //Old New Horizons
+        node[color="#EFE65F"]
+        FN [label="Farlands (FN)"]
+        CA [label="Railway (CA)"]
+        CF [label="Central Factory (CF)"]
+        VI [label="Suburbs (VI)"]
+        MA [label="Swamplands (MA)"]
+        OS [label="Oil Station (OS)"]
+        ME [label="Subway Lines (ME)"]
+        AY [label="Abyss (AY)"]
+        SW [label="Swamplands (SW)"]
+        DI [label="Industrial District (DI)"]
+
+        //Shrouded Assembly
+        node[color="#33A6C9"]
+        FO [label="Fog Gulch (FO)"]
+        SE [label="Steaming Edifice (SE)"]
+        //LH [label="Lunar Byway (LH)"]
+
+        //Sunlit Trail
+        node[color="#F8CBFF"]
+        SD [label="Scorched District (SD)"]
+        PA [label="Pilgrims Ascent (PA)"]
+        FR [label="Far Shore (FR)"]
+        MF [label="Moss Fields (MF)"]
+        CW [label="Chasing Wind (CW)"]
+        GU [label="Gray Urban (GU)"]
+        NP [label="Necropolis (NP)"]
+        EU [label="Luminous Cove (EU)"]
+
+        //Hub Regions
+        FT [label="Forsaken Station (FT)" color="#9cf5e0"]
+        TM [label="The Mast (TM)" color="#FFE7AF"]
+        TX [label="Underpass (TX)" color="#a05151"]
+        DC [label="Drainage Canal (DC)" color="#a05151"]
+    }
+  
+    subgraph Van2ModConnections {
+        edge[color="",penwidth=2]
+
+        VS -> J2 [color="#75405C"]
+
+        SI -> HR [color="#FFD0AA"]
+        HR -> SU [color="#38C79E"]
+        HR -> GW [color="#8DBD42"]
+        G5 -> SU [color="#38C79E"]
+
+        BW -> LF [color="#608C9E"]
+
+        WM -> SU [color="#38C79E"]
+
+        LF -> AGC [color="#608C9E"]
+        AGC -> SB [color="#7D4236"]
+
+        SH -> M2 [color="#515151"]
+        M2 -> SB [color="#7D4236"]
+
+        SU -> PR [color="#38C79E"]
+
+        OE -> WF [color="#D8AE8A"]
+
+        LF -> QL [color="#608C9E"]
+        QL -> SH [color="#515151"]
+
+        FN -> SB [color="#7D4236"]
+        FN -> OE [color="#D8AE8A"]
+        AY -> SH [color="#515151"]
+        CC -> SW [color="#C53D0F"]
+        SL -> DI [color="#EDE5CC"]
+
+        SS -> KF [color="#19E53F"]
+        SS -> QW [color="#19E53F"]
+        SS -> NS [color="#19E53F"]
+        SL -> SK [color="#EDE5CC"]
+        SE -> LF [color="#608C9E"]
+        HI -> Q0 [color="#75CED5"]
+        OE -> CY [color="#D8AE8A"]
+        SU -> "9J" [color="#38C79E"]
+        HI -> FF [color="#75CED5"]
+        LF -> WY [color="#608C9E"]
+        OE -> RE [color="#D8AE8A"]
+        SU -> YL [color="#38C79E"]
+        LF -> HA [color="#608C9E"]
+        SL -> SP2 [color="#EDE5CC"]
+        SK2 -> SU [color="#38C79E"]
+        HI -> CR [color="#75CED5"]
+
+        CC -> FI [color="#C53D0F"]
+        FI -> SU [color="#38C79E"]
+        FI -> SL [color="#EDE5CC"]
+
+        HI -> F3 [color="#75CED5"]
+        F3 -> SB [color="#7D4236"]
+
+        SI -> WP [color="#FFD0AA"]
+        WP -> LF [color="#608C9E"]
+
+        UB -> SL [color="#EDE5CC"]
+        SU -> UB [color="#38C79E"]
+        LF -> UB [color="#608C9E"]
+
+        UW -> TT [color="#FFB447"]
+        TT -> SH [color="#515151"]
+
+        RA -> LF [color="#608C9E"]
+        SI -> JH [color="#FFD0AA"]
+        JH -> GW [color="#8DBD42"]
+
+        RG -> OE [color="#D8AE8A"]
+
+        IP -> SL [color="#EDE5CC"]
+        DS -> IP [color="#E84DFF"]
+
+        GW -> M5 [color="#8DBD42"]
+        M5 -> OE [color="#D8AE8A"]
+
+        SW1 -> GW [color="#8DBD42"]
+        SW1 -> SB [color="#7D4236"]
+        SW1 -> SH [color="#515151"]
+        SW1 -> SL [color="#EDE5CC"]
+        UW -> SW1 [color="#FFB447"]
+
+        MT -> OE [color="#D8AE8A"]
+        HI -> MT [color="#75CED5"]
+        SH -> MT [color="#515151"]
+
+        TO -> SU [color="#38C79E"]
+        TO -> SL [color="#EDE5CC"]
+
+        SS -> TO2 [color="#19E53F"]
+        CC -> TO2 [color="#C53D0F"]
+        TO2 -> SH [color="#515151"]
+
+        SI -> SP [color="#FFD0AA"]
+        SP -> OE [color="#D8AE8A"]
+        SP -> LF [color="#608C9E"]
+
+        KY -> HI [color="#75CED5"]
+        KY -> UW [color="#FFB447"]
+
+        NR -> SI [color="#FFD0AA"]
+        NR -> LF [color="#608C9E"]
+
+        SS -> SPS [color="#19E53F"]
+        SPS -> GW [color="#8DBD42"]
+
+        LF -> BY [color="#608C9E"]
+        BY -> DS [color="#E84DFF"]
+
+        SI -> W2 [color="#FFD0AA"]
+        W2 -> HI [color="#75CED5"]
+
+        LF -> VQ [color="#608C9E"]
+        VQ -> SU [color="#38C79E"]
+
+        HW -> LF [color="#608C9E"]
+        HW -> SH [color="#515151"]
+
+        CC -> NM [color="#C53D0F"]
+        NM -> SH [color="#515151"]
+        NM -> SB [color="#7D4236"]
+        
+        CC -> ML [color="#C53D0F"]
+        LF -> ML [color="#608C9E"]
+        ML -> GW [color="#8DBD42"]
+        ML -> VS [color="#75405C"]
+
+        LF -> XD [color="#608C9E"]
+        XD -> SU [color="#38C79E"]
+
+        SH -> HC [color="#515151"]
+        HC -> SB [color="#7D4236"]
+
+        F1 -> OE [color="#D8AE8A"]
+        VS -> F1 [color="#75405C"]
+
+        CC -> FB [color="#C53D0F"]
+        FB -> SH [color="#515151"]
+
+        SI -> EV [color="#FFD0AA"]
+        EV -> OE [color="#D8AE8A"]
+
+        LC -> W7 [color="#7F3339"]
+        W7 -> UW [color="#FFB447"]
+
+        SH -> DP [color="#515151"]
+        DP -> DS [color="#E84DFF"]
+        DP -> SB [color="#7D4236"]
+
+        SS -> DW [color="#19E53F"]
+        DW -> SL [color="#EDE5CC"]
+
+        HI -> KR [color="#75CED5"]
+        KR -> VS [color="#75405C"]
+        KR -> SB [color="#7D4236"]
+
+        SH -> DKM [color="#515151"]
+        DKM -> SB [color="#7D4236"]
+
+        CC -> AK [color="#C53D0F"]
+        AK -> SU [color="#38C79E"]
+
+        CC -> PQ [color="#C53D0F"]
+        PQ -> SU [color="#38C79E"]
+        PQ -> LF [color="#608C9E"]
+
+        UW -> UU [color="#FFB447"]
+        UU -> HI [color="#75CED5"]
+        UU -> SH [color="#515151"]
+
+        SU -> BI [color="#38C79E"]
+        GW -> BI [color="#8DBD42"]
+
+        SI -> OA [color="#FFD0AA"]
+        OA -> SL [color="#EDE5CC"]
+
+        ZZ -> SI [color="#FFD0AA"]
+        ZZ -> LF [color="#608C9E"]
+
+        HI -> TX [color="#75CED5"]
+
+        FT -> HI [color="#75CED5"]
+        FT -> SB [color="#7D4236"]
+        
+        DS -> LW [color="#E84DFF"]
+        SH -> LW [color="#515151"]
+
+        LF -> BL [color="#608C9E"]
+        BL -> GW [color="#8DBD42"]
+
+        SL -> US [color="#EDE5CC"]
+        SH -> US [color="#515151"]
+
+        SI -> TM [color="#FFD0AA"]
+        TM -> SB [color="#7D4236"]
+
+        SU -> SC [color="#38C79E"]
+        SH -> SC [color="#515151"]
+
+        AB -> SL [color="#EDE5CC"]
+        LF -> AB [color="#608C9E"]
+
+        MS -> RF [color="#0B9793"]
+        VS -> RF [color="#75405C"]
+
+        VS -> UF [color="#75405C"]
+        DS -> UF [color="#E84DFF"]
+        GW -> UF [color="#8DBD42"]
+
+
+        //Hallowed Grotto
+        DS -> HH [color="#E84DFF"]
+        HH -> SB [color="#7D4236"]
+        SL -> HH [color="#EDE5CC"]
+        DS -> HH [color="#E84DFF"]
+        GW -> HH [color="#8DBD42"]
+
+        //Sunlit Trail
+        LC -> SD [color="#7F3339"]
+        UW -> SD [color="#FFB447"]
+        SD -> SS [color="#19E53F"]
+        SS -> PA [color="#19E53F"]
+        UW -> PA [color="#FFB447"]
+        PA -> GW [color="#8DBD42"]
+        FR -> SB [color="#7D4236"]
+        FR -> MS [color="#0B9793"]
+        
+    }
+
+    subgraph Mod2ModConnections {
+        edge[penwidth=2 color=""]
+
+        //Done
+        GS -> { TM AB } [color="#d4c9b0"]
+        SEC -> SK [color="#aefbff"]
+        SK -> RF [color="#295c75"]
+        DC -> TX [color="#a05151"]
+        TM -> { BL US } [color="#FFE7AF"]
+        KY -> NR [color="#669745"]
+        VQ -> M1 [color="#319578"]
+        TX -> RG [color="#a05151"]
+        MD -> MF [color="#73655f"]
+        HC -> UB [color="#b33e4c"]
+        MS -> OWO [color="#0B9793"]
+        OE -> OWO [color="#D8AE8A"]
+        J2 -> J1 [color="#ADADAD"]
+
+        //polehop
+        PR -> { PH SQ } [color="#443b3e"] 
+
+        //Hallowed Grotto
+        AB -> HH [color="#ffcc7d"]
+        SC -> HH [color="#57735f"]
+        UF -> HH [color="#99db25"]
+
+        //Old New Horizons
+        edge[color="#EFE65F"]
+        AY -> { ME OS } 
+        ME -> { CF MA }
+        OS -> { CF MA }
+        CF -> { CA VI }
+        MA -> { VI }
+        FN -> { CA }
+        DI -> { VI ME }
+        SW -> { ME VI OS }
+
+        //Shrouded Assembly 
+        edge[color="#33A6C9"]
+        SE -> FO
+        //SE -> { LH }
+
+        //Forsaken Station
+        edge[color="#9cf5e0"]
+        FT -> FO
+        FT -> TX
+
+        //Sunlit Trail
+        edge[color="#F8CBFF"]
+        CW ->  { GU EU }
+        GU -> { MF NP }
+        NP -> { EU FR GS }
+        KF -> { MF } [color="#da8760"]
+        LI -> MF [color="#2b0d0d"]
+        MF -> { EU FR }
+        SEC -> FR [color="#aefbff"]
+        SD -> PA 
+        PA -> FR 
+        SD -> TM
+
+        //Global Hyper-Transit System / 4B
+        edge[color="#6859ab"]
+        "4B" -> { Q0 RW } [color="#303C7D"]
+        Q0 -> { IQ NSH II }
+        MF -> Q0 [color="#F8CBFF"]
+
+        //Gardens
+        edge[color="#A3FFA4"]
+        PV -> GH
+        GH -> LW
+        GH -> SE
+        GH -> RF
+
+    }
+
+    
+    subgraph DontExistYet {
+        node[style=dashed,color=grey]
+        edge[style=dashed,color=grey]
+        AR [label="Aether Ridge (AR)"]
+        GS -> AR -> RF
+        // MK [label="MK"]
+        // MK -> EV
+        // VCwip [label="Ventilation\nComplex"]
+        // VCwip -> TO
+        // MDwip [label="???"]
+        // MDwip -> MD
+        W1 [label="Windy\nScaffolds (W1)"]
+        GU -> W1
+
+        /*         
+        //cliffside
+        TAR [label="Furnace\nGorge (TAR)"]
+        NG [label="No Grand\nIdeas (NG)"]
+        WK [label="Darkwater (WK)"]
+        { TAR NG } -> LI
+        LI -> WK
+
+
+
+        ATwip [label="AT"]
+        GCwip [label="Galacial Crest"]
+        NCwip [label="Northern Canyons"]
+        { ATwip GCwip NCwip } -> FT
+
+        FFwip [label="Floating Facility"]
+        DCwip [label="?"]
+        DCwip -> DC -> FFwip
+
+        TRwip [label="The Root"]
+        TX1wip [label="?"]
+        TX2wip [label="?"]
+        { TX1wip TX2wip } -> TX -> TRwip
+        // */
+
+    }
+
+    subgraph fourbtime {
+        //edge[constraint=false,color=lightgrey,style=dashed,penwidth=0.5]
+        //"4B" -> { PA, SD, GS, CW, LW, TM, RW, ML, AB, SC, GH, US, SK, RF, HH, UF, FR, MF, II }
+        //{ UW, SS, LC, SI, CC, MS, SU, HI, VS, GW, SH, LF, OE, SL, SB, DS } -> "4B"
+        //simplified
+        //SU -> "4B" [color=lightgrey,style=dashed,penwidth=0.5]
+        
+    }
+
+
+  
+}

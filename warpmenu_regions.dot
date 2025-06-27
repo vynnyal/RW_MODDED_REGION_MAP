@@ -1,0 +1,53 @@
+strict digraph G {
+    edge[dir=none]
+    node[shape=rect style=filled]
+    splines=ortho
+    
+        EGLL [label="Echo's Rooms (EGLL)" color="#aaaaaa"]
+        GR [label="Community Gallery\nRegion 2024 (GR)" color="#65a54e"]
+        "7Q" [label="Six Strange Sights (7Q)" color="#647c3d"]
+
+        //Distant Overgrowth
+        node[color="#c689be"]
+        IM [label="Pipeyard Marsh (IM)"]
+        DOTI [label="Torrential\nIndustrial (DOTI)"]
+        TV [label="Industrial Falls (TV)"]
+        DOHR [label="The Cultivator (DOHR)"]
+        WL [label="Warm Lakeside (WL)"]
+
+        //The Adventurer
+        node[color="#d86ff1"]
+        EI [label="Faraway\nHighlands (EI)"]
+        FH [label="Floral\nHollow (FH)"]
+        GD [label="Garbage\nDisposal (GD)"]
+        IW [label="Industrial\nWastes (IW)"]
+        RE2 [label="Ruined Exterior (RE)"]
+        RI [label="Rotten Interior (RI)"]
+        node[style="dashed" color="#aaaaaa"]
+        PR2 [label="PR"]
+        SG [label="SG"]
+        ST [label="ST"]
+        //SM [label="Unnamed (SM)"]
+
+        //Cliffside Garden
+        node[color="#717372"]
+        B4 [label="Cliffside Garden (B4)"]
+        B0 [label="Path of Yore (B0)"]
+        B0 -> B4 [color="#717372"]
+
+        
+        //The Adventurer
+        edge[color="#d86ff1"]
+        GD -> { RE2 FH ST }
+        SG -> ST
+        ST -> RE2
+        RE2 -> { IW RI EI }
+        IW -> { GD PR2 }
+        RI -> EI
+        FH -> { GD IW }
+
+        //Distant Overgrowth
+        IM -> { TV DOTI } [color="#c689be"]
+        edge[color="#ffffff"]
+        IM -> DOHR -> WL
+}

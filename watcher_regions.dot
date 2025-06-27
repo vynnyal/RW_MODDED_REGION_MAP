@@ -1,0 +1,102 @@
+strict digraph G {
+    edge[dir=none color="#414141"]
+    node[shape=rect style=filled penwidth=3]
+    splines=ortho
+            //Watcher
+
+        WARB [label="Salination\n(WARB)" fillcolor="#425aec" color="gold"]
+        WARC [label="Fetid Glen\n(WARC)" fillcolor="#a17236" color="gold"]
+        WARD [label="Cold Storage\n(WARD)" fillcolor="#8273cd" color="gold"]
+        WARE [label="Heat Ducts\n(WARE)" fillcolor="#6f4e4e" color="gold" fontcolor=white]
+        WARF [label="Aether Ridge\n(WARF)" fillcolor="#676b81" color="gold" fontcolor=white]
+        WARG [label="The Surface\n(WARG)" fillcolor="#6098cd" color="#414141"]
+        WBLA [label="Badlands\n(WBLA)" fillcolor="#bf9168" color="gold"]
+        WORA [label="Outer Rim\n(WORA)" fillcolor="#8938eb" color="#414141"]
+        WPTA [label="Signal Spires\n(WPTA)" fillcolor="#f181d0" color="gold"]
+        WRFA [label="Coral Caves\n(WRFA)" fillcolor="#57a0ef" color="#414141"]
+        WRFB [label="Turbulent Pump\n(WRFB)" fillcolor="#4082b3" color="gold"]
+        WRRA [label="Rusted Wrecks\n(WRRA)" fillcolor="#c37867" color="#414141"]
+        WSKA [label="Torrential\nRailways\n(WSKA)" fillcolor="#86e1fd" color="#414141"]
+        WSKB [label="Sunlit Port\n(WSKB)" fillcolor="#fff897" color="#414141"]
+        WSKC [label="Stormy Coast\n(WSKC)" fillcolor="#92839b" color="gold"]
+        WSKD [label="Shrouded Coast\n(WSKD)" fillcolor="#5fb7ae" color="gold"]
+        WTDA [label="Torrid Desert\n(WTDA)" fillcolor="#dfa75f" color="gold"]
+        WTDB [label="Desolate Tract\n(WTDB)" fillcolor="#c8d3b2" color="gold"]
+        WVWA [label="Verdant\nWaterways\n(WVWA)" fillcolor="#3ccd45" color="gold"]
+        WRSA [label="Daemon\n(WRSA)" fillcolor="#3e3e55" color="blue" fontcolor=white]
+        WSSR [label="Unfortunate\nEvolution\n(WSSR)" fillcolor="#978ea7" color="#350256"]
+        WDSR [label="Decaying\nTunnels\n(WDSR)" fillcolor="#8c679d" color="#350256"]
+        WGWR [label="Infested\nWastes\n(WGWR)" fillcolor="#8c679d" color="#350256"]
+        WHIR [label="Corrupted\nFactories\n(WHIR)" fillcolor="#8c679d" color="#350256"]
+        WSUR [label="Crumbling\nFringes\n(WSUR)" fillcolor="#8c679d" color="#350256"]
+        WARA [label="Shattered Terrace\n(WARA)" fillcolor="#d7ca5f" color="#ffe388"]
+        WAUA [label="Ancient Urban\n(WAUA)" fillcolor="#d7dfb3" color="#ffe388"]
+
+      
+
+// [penwidth=3 dir=forward]
+
+        WSKB -> {WARF WRRA} [penwidth=3]
+        WSKA -> {WARF WRFA} [penwidth=3]
+
+        WRRA -> {WRFA WTDB} [penwidth=3]
+
+        WRFA -> {WRRA WARF} [penwidth=3]
+            WRFA -> WRFB [penwidth=3 style=dashed dir=forward color="#6B6B6B"]
+        WARF -> {WSKD} [penwidth=3]
+            WARF -> WTDA [penwidth=3 color="#ffd700;0.05:#eac807;0.05:#d5b70e;0.05:#c0a616;0.05:#ab951d;0.05:#958524;0.05:#80742b;0.05:#6b6333;0.05:#56523a;0.05:#414141"]
+
+        WSKD -> {WARG} [penwidth=3]
+            WSKD -> {WBLA} [penwidth=3 color="black:gold;0.5"]
+            WSKD -> {WARD} [penwidth=3 color="#ffd700;0.05:#eac807;0.05:#d5b70e;0.05:#c0a616;0.05:#ab951d;0.05:#958524;0.05:#80742b;0.05:#6b6333;0.05:#56523a;0.05:#414141"]
+            WARD -> WSKD [penwidth=3]
+        WTDA -> {WARG WARE} [penwidth=3]
+            WTDA -> {WBLA} [penwidth=3 color="#ffd700;0.05:#eac807;0.05:#d5b70e;0.05:#c0a616;0.05:#ab951d;0.05:#958524;0.05:#80742b;0.05:#6b6333;0.05:#56523a;0.05:#414141"]
+        WTDB -> {WARG} [penwidth=3]
+            WTDB -> WRFB [penwidth=3 color="#ffd700;0.05:#eac807;0.05:#d5b70e;0.05:#c0a616;0.05:#ab951d;0.05:#958524;0.05:#80742b;0.05:#6b6333;0.05:#56523a;0.05:#414141"]
+
+        WBLA -> {WARD} [penwidth=3]
+            WBLA -> WSSR [penwidth=3 style=dashed dir=forward color="#6B6B6B"]
+        WARG -> {WARD} [penwidth=3]
+        WRFB -> {WVWA} [penwidth=3]
+            WRFB -> WARE [penwidth=3 color="#ffd700;0.05:#eac807;0.05:#d5b70e;0.05:#c0a616;0.05:#ab951d;0.05:#958524;0.05:#80742b;0.05:#6b6333;0.05:#56523a;0.05:#414141"]
+
+        WARD -> {WSKC} [penwidth=3]
+            WARD -> {WSSR} [penwidth=3 style=dashed dir=forward color="#6B6B6B"]
+            WARD -> {WARB} [penwidth=3 color="#ffd700;0.05:#eac807;0.05:#d5b70e;0.05:#c0a616;0.05:#ab951d;0.05:#958524;0.05:#80742b;0.05:#6b6333;0.05:#56523a;0.05:#414141"]
+        WARE -> {WSKC} [penwidth=3 color="#ffd700;0.05:#eac807;0.05:#d5b70e;0.05:#c0a616;0.05:#ab951d;0.05:#958524;0.05:#80742b;0.05:#6b6333;0.05:#56523a;0.05:#414141"]
+            WARE -> {WARB} [penwidth=3 style=dashed dir=forward color="#6B6B6B"]
+
+        WSSR -> {WORA} [penwidth=3 style=dashed dir=forward color="#6B6B6B"]
+        WSKC -> {WPTA} [penwidth=3 color="#ffd700;0.05:#eac807;0.05:#d5b70e;0.05:#c0a616;0.05:#ab951d;0.05:#958524;0.05:#80742b;0.05:#6b6333;0.05:#56523a;0.05:#414141"]
+        WARB -> {WARA} [penwidth=3 color="#ffd700;0.05:#eac807;0.05:#d5b70e;0.05:#c0a616;0.05:#ab951d;0.05:#958524;0.05:#80742b;0.05:#6b6333;0.05:#56523a;0.05:#414141"]
+            WARB -> {WARC} [penwidth=3]
+        WVWA -> {WPTA} [penwidth=3]
+            WVWA -> {WARC} [penwidth=3 color="#ffd700;0.05:#eac807;0.05:#d5b70e;0.05:#c0a616;0.05:#ab951d;0.05:#958524;0.05:#80742b;0.05:#6b6333;0.05:#56523a;0.05:#414141"]
+
+        WPTA -> {WARA} [penwidth=3 color="#ffd700;0.05:#eac807;0.05:#d5b70e;0.05:#c0a616;0.05:#ab951d;0.05:#958524;0.05:#80742b;0.05:#6b6333;0.05:#56523a;0.05:#414141"]
+        WARC -> {WARA} [penwidth=3 color="#ffd700;0.05:#eac807;0.05:#d5b70e;0.05:#c0a616;0.05:#ab951d;0.05:#958524;0.05:#80742b;0.05:#6b6333;0.05:#56523a;0.05:#414141"]
+
+        WRSA -> {WARA} [penwidth=3 style=dashed dir=forward color="#6B6B6B"]
+        WARA -> {WAUA} [penwidth=3 style=dashed dir=forward color="#6B6B6B"]
+        
+        {WDSR WSUR WHIR WGWR} -> WORA [penwidth=3 style=dashed dir=forward color="#6B6B6B"]
+        WORA -> WRSA [penwidth=3 dir=forward color=blue]
+
+    //Watcher+
+        edge[dir=none penwidth=2 color=black]
+        WAGR [label="Gloaming Refinery\n(WAGR)" color="#6b1313" fontcolor="#ffffff"]
+        DDDD [label="Seafloor Base\n(DDDD)" color="#9b4f4c" fontcolor="#ffffff"]
+
+        //Dreamscape Expansion
+        RIVR [label="The River\n(RIVR)" color=""]
+        COBU [label="Coastal Building\n(COBU)" color=""]
+        WTDB -> COBU -> RIVR
+
+        SR [label ="Sooty Refinery\n(SR)" color="#973323" fontcolor="#ffffff"]
+        WSKA -> SR
+        SR -> {WARC WTDA}
+
+
+
+}
