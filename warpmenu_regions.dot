@@ -7,6 +7,9 @@ strict digraph G {
         GR [label="Community Gallery\nRegion 2024 (GR)" color="#65a54e"]
         "7Q" [label="Six Strange Sights (7Q)" color="#647c3d"]
 
+        //Overgrowth
+        SX [label="Sunlit Scaffolds (SX)" color="#52976e"]
+
         //Distant Overgrowth
         node[color="#c689be"]
         IM [label="Pipeyard Marsh (IM)"]

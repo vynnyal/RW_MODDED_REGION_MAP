@@ -1,0 +1,204 @@
+        /*
+            { SB, OE } -> FN
+            { SL } -> DI
+            { CC } -> SW
+            { SH } -> AY
+            { UW, LC } -> W7
+            { OE } -> CY
+            { SU } -> "9J"
+            { SH, SB } -> DKM
+            { CC, LF, SU } -> PQ
+            { SU, CC } -> AK
+            { HI, VS, SB } -> KR
+            { SS, SL } -> DW
+            { SH, DS, SB } -> DP
+            { LF, SI } -> ZZ
+            { SI, SL } -> OA
+            { SU, GW } -> BI
+            { HI, SH } -> UU
+            { LF } -> WY
+            { SS } -> NS
+            { CC, SH } -> FB
+            { VS, OE } -> F1
+            { HI } -> FF
+            { SB, SH } -> HC
+            { SU, LF } -> XD
+            { GW, VS, CC, LF } -> ML
+            { CC, SH, SB } -> NM
+            { SH, LF } -> HW
+            { SU, LF } -> VQ
+            { HI, SI } -> W2
+            { OE } -> RE
+            { DS, LF } -> BY
+            { SU } -> YL
+            { LF } -> HA
+            { GW, SS } -> SPS
+            { SL } -> SP
+            { SI, LF, OE } -> SP
+            { CC, SS, SH, SL } -> TO
+            { OE, SH, HI } -> MT
+            { LF } -> RA
+            { GW, SI } -> JH
+            { SB } -> TT
+            { SS } -> QW
+            { HI } -> CR
+            { MS } -> KF
+            { LF, SL } -> AB
+            { GW, LF } -> BL
+            { GW, VS, MS } -> RF
+            { SI, OE } -> EV
+            { MS, SB, GW } -> FR
+            { SB, HI } -> FT
+            { DS, GW, SL, SB } -> HH
+            { DS, SH } -> LW
+            { GW, UW, SS } -> PA
+            { SU, SH } -> SC
+            { LC, SS, UW } -> SD
+            { GW, VS, DS } -> UF
+            { SU } -> SK
+            { LF } -> SE
+            { LF, SI } -> NR
+            { HI, UW } -> KY
+            { SI, SB } -> TM
+            { SU, SL, LF } -> UB
+            { SL, SH } -> US
+        */
+
+        /*
+            SU -> { "9J" PQ AK BI XD VQ YL SC SK UB FI } [color="#38C79E"]
+            HI -> { Q0 KR UU FF W2 MT CR FT KY F3 } [color="#75CED5"]
+            GW -> { BI ML SPS JH BL RF FR HH PA UF } [color="#8DBD42"]
+            SH -> { AY DKM DP UU FB HC NM HW TO MT LW SC US } [color="#515151"]
+            SL -> { DI DW OA SP TO AB HH UB US FI } [color="#EDE5CC"]
+            CC -> { SW PQ AK FB ML NM TO XX FI } [color="#C53D0F"]
+            DS -> { DP BY HH LW UF } [color="#E84DFF"]
+            LF -> { WP PQ ZZ WY XD ML HW VQ BY HA SP RA AB BL SE NR UB } [color="#608C9E"]
+            SI -> { WP ZZ OA W2 SP JH EV NR TM } [color="#FFD0AA"]
+            UW -> { W7 PA SD KY } [color="#FFB447"]
+            SS -> { DW NS SPS TO QW PA SD } [color="#19E53F"]
+            SB -> { FN DKM KR DP HC NM TT FR FT HH TM F3 } [color="#7D4236"]
+            VS -> { KR F1 ML RF UF } [color="#75405C"]
+            MS -> { KF RF FR } [color="#0B9793"]
+            OE -> { FN CY F1 RE SP MT EV } [color="#D8AE8A"]
+            LC -> { W7 SD } [color="#7F3339"]
+        */
+
+        /*
+                    SU -> HI [color="#38C79E;0.5:#75CED5"]
+                    SU -> DS [color="#38C79E;0.5:#E84DFF"]
+                    SU -> LF [color="#38C79E;0.5:#608C9E"]
+                    HI -> GW [color="#75CED5;0.5:#8DBD42"]
+                    HI -> CC [color="#75CED5;0.5:#C53D0F"]
+                    HI -> SH [color="#75CED5;0.5:#515151"]
+                    HI -> VS [color="#75CED5;0.5:#75405C"]
+                    GW -> DS [color="#8DBD42;0.5:#E84DFF"]
+                    GW -> SL [color="#8DBD42;0.5:#EDE5CC"]
+                    SH -> SL [color="#515151;0.5:#EDE5CC"]
+                    SH -> UW [color="#515151;0.5:#FFB447"]
+                    SL -> SB [color="#EDE5CC;0.5:#7D4236"]
+                    SL -> VS [color="#EDE5CC;0.5:#75405C"]
+                    SL -> MS [color="#EDE5CC;0.5:#0B9793"]
+                    CC -> SI [color="#C53D0F;0.5:#FFD0AA"]
+                    CC -> UW [color="#C53D0F;0.5:#FFB447"]
+                    DS -> SB [color="#E84DFF;0.5:#7D4236"]
+                    DS -> CC [color="#E84DFF;0.5:#C53D0F"]
+                    VS -> SI [color="#75405C;0.5:#FFD0AA"]
+                    SI -> LF [color="#FFD0AA;0.5:#608C9E"]
+                    UW -> SS [color="#FFB447;0.5:#19E53F"]
+                    UW -> LC [color="#FFB447;0.5:#7F3339"]
+                    SB -> OE [color="#7D4236;0.5:#D8AE8A"]
+                    OE -> SU [color="#D8AE8A;0.5:#38C79E"]
+        */
+
+
+        strict digraph G {
+            edge[dir=none]
+            node[shape=rect style=filled]
+            splines=ortho
+        
+                node[ penwidth=3 style="filled, diagonals" fontname="Impact" ]
+                SU [label="Outskirts" color="#38C79E" fillcolor="#a1e7d3"]
+                HI [label="Industrial Complex" color="#75CED5" fillcolor="#b2e4e7"]
+                GW [label="Garbage Wastes" color="#8DBD42" fillcolor="#bee67f"]
+                SH [label="Shaded Citadel" color="#515151" fillcolor="#a3a3a3"]
+                SL [label="Shoreline" color="#EDE5CC" fillcolor="#A8B88B"]
+                CC [label="Chimney Canopy" color="#C53D0F" fillcolor="#eb7f5b"]
+                DS [label="Drainage System" color="#E84DFF" fillcolor="#f6b8ff"]
+                LF [label="Farm Arrays" color="#608C9E" fillcolor="#a2c7d6"]
+                SI [label="Sky Islands" color="#FFD0AA" fillcolor="#fff0e4"]
+                UW [label="The Exterior" color="#FFB447" fillcolor="#ffddaa"]
+                SS [label="Five Pebbles" color="#19E53F" fillcolor="#79f890"]
+                SB [label="Subterranean" color="#7D4236" fillcolor="#a17167"]
+                VS [label="Pipeyard" color="#75405C" fillcolor="#9c768a"]
+                MS [label="Submerged" color="#0B9793" fillcolor="#89d1cf"]
+                OE [label="Outer Expanse" color="#D8AE8A" fillcolor="#e6d5c6"]
+                LC [label="Metropolis" color="#7F3339" fillcolor="#b6777c"]
+        
+                // Van2VanConnections --------
+                edge[penwidth=3]
+        
+
+        
+
+                //level 0
+                    //SS
+                    SS -> UW [color="#19E53F"]//;0.5:#FFB447"]
+                    //LC
+                LC -> UW [color="#FFB447"]//;0.5:#7F3339"]
+        
+                //level 1
+                    //SI
+                SI -> CC [color="#FFD0AA"]//;0.5:#C53D0F"]
+                SI -> LF [color="#FFD0AA"]//;0.5:#608C9E"]
+                SI -> VS [color="#FFD0AA"]//;0.5:#75405C"]
+                    //UW
+                UW -> CC [color="#FFB447"]//;0.5:#C53D0F"]
+                UW -> SH [color="#FFB447"]//;0.5:#515151"]
+                UW -> SL [color="#FFB447"]//;0.5:#515151"]
+        
+                //level 2
+                    //CC
+                CC -> HI [color="#C53D0F"]//;0.5:#75CED5"]
+                CC -> DS [color="#C53D0F"]//;0.5:#E84DFF"]
+                
+                //level 3
+                    //HI
+                HI -> SH [color="#75CED5"]//;0.5:#515151"]
+                HI -> SU [color="#75CED5"]//;0.5:#38C79E"]
+                HI -> VS [color="#75CED5"]//;0.5:#75405C"]
+                HI -> GW [color="#75CED5"]//;0.5:#8DBD42"]
+        
+                //level 4
+                    //SH
+                SH -> SL [color="#515151"]//;0.5:#EDE5CC"]
+                SH -> GW [color="#515151"]//;0.5:#8DBD42"]
+                    //LF
+                LF -> SU [color="#608C9E"]//;0.5:#38C79E"]
+                LF -> SB [color="#608C9E"]//;0.5:#7D4236"] 
+        
+                //level 5
+                    //SU
+                SU -> DS [color="#38C79E"]//;0.5:#E84DFF"]
+                SU -> OE [color="#38C79E"]//;0.5:#D8AE8A"]
+                    //VS
+                VS -> SL [color="#75405C"]//;0.5:#EDE5CC"]
+                VS -> SB [color="#75405C"]//;0.5:#7D4236"]
+                    //GW
+                GW -> DS [color="#8DBD42"]//;0.5:#E84DFF"] // or reverse
+                GW -> SL [color="#8DBD42"]//;0.5:#EDE5CC"]
+        
+                //level 6
+                    //DS
+                DS -> SB [color="#E84DFF"]//;0.5:#7D4236"]
+                    //SL
+                SL -> SB [color="#EDE5CC"]//;0.5:#7D4236"]
+                SL -> MS [color="#EDE5CC"]//;0.5:#0B9793"]
+        
+                //level 7
+                    //SB
+                SB -> OE [color="#7D4236"]//;0.5:#D8AE8A"]
+        
+            
+        
+            
+        }

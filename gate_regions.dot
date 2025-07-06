@@ -4,23 +4,23 @@ strict digraph G {
     splines=ortho
 
     subgraph VanillaRegions {
-        node[ penwidth=3 style="filled, diagonals" fontname="Impact" ]
-        SU [label="Outskirts" color="#38C79E" fillcolor="#a1e7d3"]
-        HI [label="Industrial Complex" color="#75CED5" fillcolor="#b2e4e7"]
-        GW [label="Garbage Wastes" color="#8DBD42" fillcolor="#bee67f"]
-        SH [label="Shaded Citadel" color="#515151" fillcolor="#a3a3a3"]
-        SL [label="Shoreline" color="#EDE5CC" fillcolor="#A8B88B"]
-        CC [label="Chimney Canopy" color="#C53D0F" fillcolor="#eb7f5b"]
-        DS [label="Drainage System" color="#E84DFF" fillcolor="#f6b8ff"]
-        LF [label="Farm Arrays" color="#608C9E" fillcolor="#a2c7d6"]
-        SI [label="Sky Islands" color="#FFD0AA" fillcolor="#fff0e4"]
-        UW [label="The Exterior" color="#FFB447" fillcolor="#ffddaa"]
-        SS [label="Five Pebbles" color="#19E53F" fillcolor="#79f890"]
-        SB [label="Subterranean" color="#7D4236" fillcolor="#a17167"]
-        VS [label="Pipeyard" color="#75405C" fillcolor="#9c768a"]
-        MS [label="Submerged" color="#0B9793" fillcolor="#89d1cf"]
-        OE [label="Outer Expanse" color="#D8AE8A" fillcolor="#e6d5c6"]
-        LC [label="Metropolis" color="#7F3339" fillcolor="#b6777c"]
+        node[ penwidth=3 style="filled, diagonals" fontname="Impact" margin=0.1]
+        SU [label="Outskirts\n(SU)" color="#38C79E" fillcolor="#a1e7d3"]
+        HI [label="Industrial Complex\n(HI)" color="#75CED5" fillcolor="#b2e4e7"]
+        GW [label="Garbage Wastes\n(GW)" color="#8DBD42" fillcolor="#bee67f"]
+        SH [label="Shaded Citadel\n(SH)" color="#515151" fillcolor="#a3a3a3"]
+        SL [label="Shoreline\n(SL)" color="#EDE5CC" fillcolor="#A8B88B"]
+        CC [label="Chimney Canopy\n(CC)" color="#C53D0F" fillcolor="#eb7f5b"]
+        DS [label="Drainage System\n(DS)" color="#E84DFF" fillcolor="#f6b8ff"]
+        LF [label="Farm Arrays\n(LF)" color="#608C9E" fillcolor="#a2c7d6"]
+        SI [label="Sky Islands\n(SI)" color="#FFD0AA" fillcolor="#fff0e4"]
+        UW [label="The Exterior\n(UW)" color="#FFB447" fillcolor="#ffddaa"]
+        SS [label="Five Pebbles\n(SS)" color="#19E53F" fillcolor="#79f890"]
+        SB [label="Subterranean\n(SB)" color="#7D4236" fillcolor="#a17167"]
+        VS [label="Pipeyard\n(VS)" color="#75405C" fillcolor="#9c768a"]
+        MS [label="Submerged\n(MS)" color="#0B9793" fillcolor="#89d1cf"]
+        OE [label="Outer Expanse\n(OE)" color="#D8AE8A" fillcolor="#e6d5c6"]
+        LC [label="Metropolis\n(LC)" color="#7F3339" fillcolor="#b6777c"]
 
         // Van2VanConnections --------
         edge[penwidth=3]
@@ -130,12 +130,12 @@ strict digraph G {
         SEC [label="Secluded\nPass (SEC)" color="#aefbff"]
         UF [label="Sizzling\nSewers (UF)" color="#99db25"]
         KY [label="Sky Tower (KY)" color="#669745"]
-        SP2 [label="Slag Pits (SP)" color="#25332b" fontcolor="#ffffff"]
-        SK2 [label="Slug King (SK)" color="#c99292"]
+        SP2 [label="Slag Pits (SP*)" color="#25332b" fontcolor="#ffffff"]
+        SK2 [label="Slug King (SK*)" color="#c99292"]
         SK [label="Stormy Coast (SK)" color="#295c75"]
         NR [label="Sun-Scorched\nForest (NR)" color="#d9a073"]
         SP [label="Sunlit Power\nPlant (SP)" color="#f7ac83"]
-        TO2 [label="Tainted Overpass (TO)" color="#34483f"]
+        TO2 [label="Tainted Overpass (TO*)" color="#34483f"]
         MT [label="The Grinder (MT)" color="#752121"]
         TO [label="The Outline (TO)" color="#6c9682"]
         RA [label="The Radiosphere (RA)" color="#556b4d"]
@@ -148,12 +148,12 @@ strict digraph G {
         WP [label="Weakened\nPlatform (WP)" color="#c96d51"]
         F3 [label="The Foundry (F3)" color="#ed8b44"]
         FI [label="Floating\nIsles (FI)" color="#a4a5ba"]
-        SW1 [label="Seven Winding\nTunnles (SW)" color="#7f7ee6"]
+        SW2 [label="Seven Winding\nTunnles (SW*)" color="#7f7ee6"]
         IP [label="Auxiliary Intake (IP)" color="#68a39b"]
         M5 [label="Decaying Waste (M5)" color="#872f2f"]
         M1 [label="Mossy Rifts (M1)" color="#ffddf9"]
         RG [label="Consecrated\nSteppe (RG)" color="#ff6215"]
-        MD [label="Data Manifold (MD)" color="#73655f"]
+        MD [label="Data Manifold (MD)" color="#73655f" fontcolor="white"]
         QL [label="Ashen Bow (QL)" color="#6c9089"]
         WF [label="Western\nForest (WF)" color="#d89a8f"]
         OWO [label="Horrible Evil\nTunnel (OWO)" color="#444444" fontcolor="#ffffff"]
@@ -163,10 +163,28 @@ strict digraph G {
         HR [label="Hall of Fame (HR)" color="#f3604c"]
         G5 [label="Unofficial Leditor\nMonth Gallery (G5)" color="#9ebcc5"]
         BW [label="The Barren\nWastes (BW)" color="#ef9f6e"]
+        PB [label="Vile Unlawful\nPit (PB)" color="#b95c3a"]
+        PARKOUR [label="Extremely Unfair\nParkour (PARKOUR)" color="black" fontcolor="white"]
+        LT [label="Lush Tunnels (LT)" color="#656c33"]
+        SS2 [label="Cooling Wing (SS*)" color="#3f6fa0"]
+        POLE [label="Awful Malicious\nPole (POLE)" color="#85c2bb"]
+        PLZA [label="Pearlescent\nChambers (PLZA)" color="#767e80"]
+
+      //[
+        //The City
+        node[color="#ccced0"]
+        PTC [label="The Climb (PTC)"]
+        TC2 [label="The City (TC2)"]
+        
+        //Eastern Expanse
+        node[color="#bbce72"]
+        EDC [label="Dark Caves (EDC)"]
+        EE [label="Eastern Expanse (EE)"]
 
         //lost pipeways
-        J1 [label="Tower (J1)" color="#adadad"]
-        J2 [label="The Ducts (J2)" color="#adadad"]
+        node[color="#adadad"]
+        J1 [label="Tower (J1)"]
+        J2 [label="The Ducts (J2)"]
 
         //Polehop
         node[style="filled" color="#443b3e" fontcolor="#ffffff"]
@@ -229,7 +247,21 @@ strict digraph G {
     subgraph Van2ModConnections {
         edge[color="",penwidth=2]
 
+        PLZA -> LF [color="#608C9E"]
+        POLE -> SB [color="#7D4236"]
+        SS2 -> SS [color="#19E53F"]
+        LT -> DS [color="#E84DFF"]
+        PARKOUR -> SB [color="#7D4236"]
+        SS -> PARKOUR [color="#19E53F"]
+
+        CC -> PB [color="#C53D0F"]
+        PB -> SB [color="#7D4236"]
+
+        PTC -> OE [color="#D8AE8A"]
+
         VS -> J2 [color="#75405C"]
+
+        SH -> EDC [color="#515151"]
 
         SI -> HR [color="#FFD0AA"]
         HR -> SU [color="#38C79E"]
@@ -305,11 +337,11 @@ strict digraph G {
         GW -> M5 [color="#8DBD42"]
         M5 -> OE [color="#D8AE8A"]
 
-        SW1 -> GW [color="#8DBD42"]
-        SW1 -> SB [color="#7D4236"]
-        SW1 -> SH [color="#515151"]
-        SW1 -> SL [color="#EDE5CC"]
-        UW -> SW1 [color="#FFB447"]
+        SW2 -> GW [color="#8DBD42"]
+        SW2 -> SB [color="#7D4236"]
+        SW2 -> SH [color="#515151"]
+        SW2 -> SL [color="#EDE5CC"]
+        UW -> SW2 [color="#FFB447"]
 
         MT -> OE [color="#D8AE8A"]
         HI -> MT [color="#75CED5"]
@@ -475,6 +507,8 @@ strict digraph G {
         MS -> OWO [color="#0B9793"]
         OE -> OWO [color="#D8AE8A"]
         J2 -> J1 [color="#ADADAD"]
+        EE -> EDC [color="#bbce72"]
+        TC2 -> PTC [color="#ccced0"]
 
         //polehop
         PR -> { PH SQ } [color="#443b3e"] 

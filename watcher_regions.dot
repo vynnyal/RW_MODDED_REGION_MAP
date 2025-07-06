@@ -84,18 +84,18 @@ strict digraph G {
         WORA -> WRSA [penwidth=3 dir=forward color=blue]
 
     //Watcher+
-        edge[dir=none penwidth=2 color=black]
-        WAGR [label="Gloaming Refinery\n(WAGR)" color="#6b1313" fontcolor="#ffffff"]
-        DDDD [label="Seafloor Base\n(DDDD)" color="#9b4f4c" fontcolor="#ffffff"]
+        // edge[dir=none penwidth=2 color=black]
+        // WAGR [label="Gloaming Refinery\n(WAGR)" color="#6b1313" fontcolor="#ffffff"]
+        // DDDD [label="Seafloor Base\n(DDDD)" color="#9b4f4c" fontcolor="#ffffff"]
 
-        //Dreamscape Expansion
-        RIVR [label="The River\n(RIVR)" color=""]
-        COBU [label="Coastal Building\n(COBU)" color=""]
-        WTDB -> COBU -> RIVR
+        // //Dreamscape Expansion
+        // RIVR [label="The River\n(RIVR)" color=""]
+        // COBU [label="Coastal Building\n(COBU)" color=""]
+        // WTDB -> COBU -> RIVR
 
-        SR [label ="Sooty Refinery\n(SR)" color="#973323" fontcolor="#ffffff"]
-        WSKA -> SR
-        SR -> {WARC WTDA}
+        // SR [label ="Sooty Refinery\n(SR)" color="#973323" fontcolor="#ffffff"]
+        // WSKA -> SR
+        // SR -> {WARC WTDA}
 
 
 
